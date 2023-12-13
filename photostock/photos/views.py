@@ -46,6 +46,7 @@ class PhotoDetailView(DetailView):
 
     context_object_name = 'photo'
 
+<<<<<<< HEAD
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         
@@ -54,6 +55,8 @@ class PhotoDetailView(DetailView):
 
         return context
 
+=======
+>>>>>>> cd69a810b8fc3394cc1ea7c221b1890f0ed7067e
 
 
 
@@ -120,17 +123,25 @@ class PhotoDownloadView(UserPassesTestMixin, View):
 
     def download_full_size(self, request, *args, **kwargs):
         photo = get_object_or_404(Photo, pk=self.kwargs['pk'])
+<<<<<<< HEAD
         
         if not self.test_func():
             return self.handle_no_permission()
         
+=======
+        if not self.test_func():
+            return self.handle_no_permission()
+>>>>>>> cd69a810b8fc3394cc1ea7c221b1890f0ed7067e
 
         response = HttpResponse(photo.image.read(), content_type='image/jpeg')
         response['Content-Disposition'] = f'attachment; filename="{photo.title}.jpg"'
         return response
     
+<<<<<<< HEAD
 
     
+=======
+>>>>>>> cd69a810b8fc3394cc1ea7c221b1890f0ed7067e
         
     def download_thumbnail(self, request, *args, **kwargs):
         photo = get_object_or_404(Photo, pk=self.kwargs['pk'])

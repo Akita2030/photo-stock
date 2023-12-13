@@ -21,11 +21,17 @@
 
     {% if user.is_authenticated %}
       <div class="text-center mt-4">
+<<<<<<< HEAD
         {% if submitter_photo_count >= 3 %}
           <a href="{% url 'photo:download_photo' photo.id %}" class="btn btn-primary">Download Full-Size Image</a>
         {% else %}
           <p class="text-warning">You need at least 3 photos to download the full-size image.</p>
         {% endif %}
+=======
+        <a href="{% url 'photo:download_photo' photo.id %}" class="btn btn-primary">
+          Download Full-Size Image
+        </a>
+>>>>>>> cd69a810b8fc3394cc1ea7c221b1890f0ed7067e
         <a href="{% url 'photo:download_photo' photo.id %}?thumbnail=true" class="btn btn-info">
           Download Thumbnail
         </a>
