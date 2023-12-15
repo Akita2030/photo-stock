@@ -27,9 +27,7 @@
         {% else %}
           <p class="text-warning">You need at least 3 photos to download the full-size image.</p>
         {% endif %}
-        <a href="{% url 'photo:download_photo' photo.id %}" class="btn btn-primary">
-          Download Full-Size Image
-        </a>
+        
         <a href="{% url 'photo:download_photo' photo.id %}?thumbnail=true" class="btn btn-info">
           Download Thumbnail
         </a>

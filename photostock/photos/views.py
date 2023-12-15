@@ -129,8 +129,7 @@ class PhotoDownloadView(UserPassesTestMixin, View):
             return self.handle_no_permission()
         
 
-        if not self.test_func():
-            return self.handle_no_permission()
+      
 
 
         response = HttpResponse(photo.image.read(), content_type='image/jpeg')
